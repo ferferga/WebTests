@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $("#btn-translate-into-spanish").hide();
+        $(document).ready(function(){
+            $("#btn-translate-into-spanish").hide()
+            $("#btn-change-format1").hide()
+            $("#btn-translate-into-english").click(function(){
+                $("#name").html("Name")
+                $("#birth-date").html("Birthday")
+                $("#info").html("Fill the form")
+                $("#footer").html("Footer")
+                $("h1").html("Header")
+                $("legend").html("Complete the form:")
+                $("#btn-change-format").html("Change format")
+                $("#btn-default-values").html("Default input values")
+                $(this).hide()
+                $("#btn-translate-into-spanish").show()
+            })
+            $("#btn-translate-into-spanish").click(function(){
+                $("#name").html("Nombre")
+                $("#birth-date").html("Fecha de nacimiento")
+                $("#info").html("Rellena el formulario.")
+                $("#footer").html("Pie de página")
+                $("h1").html("Cabecera")
+                $("legend").html("Completa el formulario:")
+                $("#btn-change-format").html("Cambiar formato")
+                $("#btn-default-values").html("Valores de input")
+                $(this).hide()
+                $("#btn-translate-into-english").show()
+            })
+            $("#btn-change-format").click(function(){
+                $("#name").css("font-weight", "bold")
+                $("#birth-date").css("font-weight", "bold")
+                $("#info").css("font-weight", "bold")
+                $("#footer").css("font-weight", "bold")
+                $("h1").css("font-weight", "bold")
+                $("legend").css("font-weight", "bold")
+                $("#email").css("font-weight", "bold")
+                $(this).hide()
+                $("#btn-change-format1").show()                
+            })
+            $("#btn-change-format1").click(function(){
+                $("#name").css("font-weight", "normal")
+                $("#birth-date").css("font-weight", "normal")
+                $("#info").css("font-weight", "normal")
+                $("#footer").css("font-weight", "normal")
+                $("h1").css("font-weight", "normal")
+                $("legend").css("font-weight", "normal")
+                $("#email").css("font-weight", "normal")
+                $(this).hide()
+                $("#btn-change-format").show() 
+            })
+            $("#btn-default-values").click(function(){
+                $("#inp-name").val("John Smith")
+                $("#inp-email").val("john.smith@gmail.com")
+                $("#inp-date").val("1976-03-05")
+            })
+        });
+    </script>
+    <style>
+        .page {
+            margin: 20px auto;
+            width: 60%;
+        }
+        h1 {
+            background-color: lightcoral;
+            height: 100px;
+        }
+        div {
+            padding: 20px;
+        }
+        #content {
+            background-color: lightblue;
+        }
+        #footer {
+            background-color: lightgoldenrodyellow;
+        }
+        input {
+            width: 300px;
+            height: 23px;
+        }
+        #form-plus-info {
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+        }
+        #info {
+            background-color: bisque;
+            margin: 0px auto;
+            align-self: center;
+            border-radius: 15px;
+            box-shadow: 14px 10px 10px -2px gray;
+        }
+        #mybuttons {
+            display: flex;
+            justify-content: space-around;
+        }
+        #mybuttons>* {
+            flex: 1;
+            max-width: 200px;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Cabecera</h1>
+        <div id="content">
+            <form>
+                <fieldset>
+                    <legend>Completa el formulario:</legend>
+                    <div id="form-plus-info">
+                        <div id="form">
+                            <p id="name">Nombre</p>
+                            <input id="inp-name" type="text">
+                            <p id="email">Email:</p>
+                            <input id="inp-email" type="text">
+                            <p id="birth-date">Fecha de nacimiento</p>
+                            <input id="inp-date" type="date"><br /><br />
+                            <input type="submit" value="Enviar"
+                                title="Como no tenemos un lugar al que enviar el contenido del formulario, cuando pulses en el botón, se limpiará el formulario.">
+                        </div>
+                        <div id="info">
+                            Rellena el formulario.
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="mybuttons">
+            <button id="btn-translate-into-english">Traducir a inglés</button>
+            <button id="btn-translate-into-spanish">Translate to Spanish</button>
+            <button id="btn-change-format">Cambiar formato</button>
+            <button id="btn-change-format1">Revertir formato</button>
+            <button id="btn-default-values">Valores de input</button>
+        </div>
+        <div id="footer">Pie de página</div>
+    </div>
+</body>
+</html>

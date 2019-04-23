@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#up").click(function()
+            {
+                $("#theblock").animate({top: "10px"}, duration=500)
+            })
+            $("#left").click(function()
+            {
+                $("#theblock").animate({left: "10px"}, duration=500)
+            })
+            $("#right").click(function()
+            {
+                $("#theblock").animate({left: "750px"}, duration=500)
+            })
+            $("#down").click(function()
+            {
+                $("#theblock").animate({top: "440px"}, duration=500)
+            })
+        });
+    </script>
+    <style>
+        #page {
+            margin: 20px auto;
+            width: 60%;
+            position: relative;
+            height: 500px;
+            border: 2px dashed black;
+        }
+        p {
+            text-align: center;
+            border: 2px solid brown;
+            background-color: blanchedalmond;
+            font-size: 150%;
+        }
+        #buttons {
+            display: grid;
+            grid-template-rows: 3;
+            grid-template-columns: 3;
+        }
+        #up {
+            grid-row: 1;
+            grid-column: 2;
+        }
+        #left {
+            grid-row: 2;
+            grid-column: 1;
+        }
+        #right {
+            grid-row: 2;
+            grid-column: 3;
+        }
+        #down {
+            grid-row: 3;
+            grid-column: 2;
+        }
+        #theblock {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            background-color: lightcoral;
+            border: 2px solid red;
+            border-radius: 5px;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>    
+    <p>Pulsando en los botones de esta página, se tiene que mover el elemento central</p>
+    <div id="buttons">
+        <button id="up">Arriba</button>
+        <button id="left">Izquierda</button>
+        <button id="right">Derecha</button>
+        <button id="down">Abajo</button>
+    </div>
+    <div id="page">
+        <div id="theblock"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Clicked!<br/>");
+            });
+            $(".dblclick").dblclick(function () {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Double clicked!<br/>");
+            });
+            $(".clear-button").click(function(){
+                $(".result").empty();
+            });
+            $(".mouseenter").mouseenter(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse entered in the zone!<br/>");
+            });
+            $(".focus").focus(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - InputBox focused!<br/>");
+            });
+            $(".submit").submit(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Data submitted!<br/>");
+            });
+            $(".change").change(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - InputBox data has been modified!<br/>");
+            });
+            $(".blur").focusout(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Focus out of the InputBox!<br/>");
+            });
+            $(".key").keydown(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Key Down pressed!<br/>");
+            });
+            $(".key").keyup(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Key Up pressed!<br/>");
+            });
+            $(".key").keypress(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - A key was pressed!<br/>");
+            });
+            $(".mouseleave").mouseleave(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse left the zone!<br/>");
+            });
+        });
+    </script>
+    <style>
+        .page {
+            margin: 50px auto;
+            min-width: 500px;
+            width: 50%;
+        }
+        table, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            height: 100px;
+            text-align: center;
+        }
+        td:hover {
+            background-color: orange;
+        }
+        .result-content {
+            background-color: lightskyblue;
+            border: 5px solid blue;
+            border-radius: 15px;
+            margin-top: 50px;
+            padding: 25px;
+            position: relative;
+        }
+        .clear-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <table>
+            <tr>
+                <td class="click" title="Click me!!">click</td>
+                <td title="Press any key on the input below">keypress</td>
+                <td title="Click on this input which is a submit type input. The page is refreshed after clicking">
+                    <p>submit</p>
+                    <form class="submit">
+                        <input type="submit" value="Click to submit">
+                    </form>
+                </td>
+                <td class="load" title="A piece of this web is loaded on the blue paragraph when you click here">load
+                </td>
+            </tr>
+            <tr>
+                <td class="dblclick" title="Double click here">dblclick</td>
+                <td title="Press any key on the input below">keydown</td>
+                <td>
+                    <p>change</p>
+                    <form>
+                        <input class="change" type="text" value="Change me">
+                    </form>
+                </td>
+                <td title="Look what happens when you resize this window">resize</td>
+            </tr>
+            <tr>
+                <td class="mouseenter" title="Look what happens when the mouse enters here">mouseenter</td>
+                <td title="Press any key on the input below">keyup</td>
+                <td title="Look what happens when the input gets the focus">
+                    <p>focus</p>
+                    <form>
+                        <input class="focus" type="text" value="Bring the focus to me">
+                    </form>
+                </td>
+                <td title="Look what happens when you scroll this page">scroll</td>
+            </tr>
+            <tr>
+                <td class="mouseleave" title="Look what happens when the mouse leaves this cell">mouseleave</td>
+                <td>
+                    <form>
+                        <input class="key" type="text" value="press any key here">
+                    </form>
+                </td>
+                <td title="Look what happens when the focus leaves this input">
+                    <p>blur</p>
+                    <form>
+                        <input class="blur" type="text" value="Take the focus out">
+                    </form>
+                </td>
+                <td title="This event will be raised when (between other things) you close this window">
+                    <span style="text-decoration: line-through">unload</span>
+                </td>
+            </tr>
+        </table>
+        <div class="result-content">
+            <div class="result"></div>
+            <button class="clear-button">Clear</button>
+        </div>
+    </div>
+</body>
+</html>
