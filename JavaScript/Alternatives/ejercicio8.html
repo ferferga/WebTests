@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 8</title>
+        <style>
+        </style>
+        <script>
+            var base = parseFloat(prompt("Introduzca la base"))
+            var exponente = parseFloat(prompt("Introduzca el exponente"))
+            if (isNaN(base) || isNaN(exponente))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var resultado = 1
+                if (exponente > 0)
+                {
+                    resultado = Math.pow(base, exponente)
+                }
+                else if (exponente < 0)
+                {
+                    resultado = Math.pow(base, (1/Math.abs(exponente)))
+                }
+                alert("La potencia es: " + resultado)
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

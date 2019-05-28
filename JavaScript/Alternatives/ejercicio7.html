@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 7</title>
+        <style>
+        </style>
+        <script>
+            var edad = parseFloat(prompt("Introduzca la edad"))
+            var nota = parseFloat(prompt("Introduzca la nota"))
+            var sexo = prompt("Introduzca el sexo (M|F)")
+            sexo = sexo.toUpperCase()
+            if (isNaN(nota) || isNaN(edad))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                if (nota>=5 && edad>=18 && sexo == "F")
+                {
+                    alert("ACEPTADA")
+                }
+                else if (nota>=5 && edad>=18 && sexo == "M")
+                {
+                    alert("POSIBLE")
+                }
+                else
+                {
+                    alert("NO ACEPTADA")
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

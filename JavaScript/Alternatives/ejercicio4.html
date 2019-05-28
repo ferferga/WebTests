@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <style>
+        </style>
+        <script>
+            var dividendo = parseFloat(prompt("Dividendo"))
+            var divisor = parseFloat(prompt("Divisor"))
+            if (isNaN(dividendo) || isNaN(divisor))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                if(divisor == 0)
+                {
+                    alert("El divisor no puede ser 0. El resultado es una indeterminación")
+                }
+                else
+                {
+                    var resultado = dividendo/divisor;
+                    alert("La división es: " + resultado)
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

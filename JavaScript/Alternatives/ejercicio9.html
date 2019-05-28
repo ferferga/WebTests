@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 9</title>
+        <style>
+        </style>
+        <script>
+            var number1 = parseFloat(prompt("Número 1"))
+            var number2 = parseFloat(prompt("Número 2"))
+            var number3 = parseFloat(prompt("Número 3"))
+            if (isNaN(number1) || isNaN(number2) || isNaN(number3))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var maximum = Math.max(number1, number2, number3)
+                if (maximum == number1)
+                {
+                    var maximum2 = Math.max(number2, number3)
+                    if (maximum2 == number2)
+                    {
+                        var maximum3 = number3;
+                    }
+                    else
+                    {
+                        var maximum3 = number2;
+                    }
+                }
+                else if (maximum == number2)
+                {
+                    var maximum2 = Math.max(number1, number3)
+                    if (maximum2 == number1)
+                    {
+                        var maximum3 = number3;
+                    }
+                    else
+                    {
+                        var maximum3 = number1;
+                    }
+                }
+                else if (maximum == number3)
+                {
+                    var maximum2 = Math.max(number3, number2)
+                    if (maximum2 == number3)
+                    {
+                        var maximum3 = number2;
+                    }
+                    else
+                    {
+                        var maximum3 = number3;
+                    }
+                }
+                alert("La serie es la siguiente: " + maximum + "," + maximum2 + "," + maximum3)
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
