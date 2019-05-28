@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 17</title>
+        <script>
+            var time = parseFloat(prompt("Tiempo de viaje"))
+            var timestamp = prompt("Hora de salida (HH:MM:SS)")
+            if(isNaN(time))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var hour = parseInt(timestamp.split(":")[0]);
+                var minute = parseInt(timestamp.split(":")[1]);
+                var second = parseInt(timestamp.split(":")[2]);
+                if(hour > 23 && minute > 59 && second > 59)
+                {
+                    alert("Los datos introducidos no son lógicos")
+                }
+                else
+                {
+                    var newHour = parseInt(time/3600);
+                    time = time - (newHour*3600)
+                    var newMinute = parseInt(time/60);
+                    time = time - (newMinute*60);
+                    var NewSecond = time + second;
+                    if (NewSecond > 59)
+                    {
+                        if (NewSecond = 60)
+                        {
+                            newMinute = newMinute + 1
+                            newSecond = NewSecond - 1
+                        }
+                        else
+                        {
+                            newMinute = newMinute + parseInt((NewSecond/60))
+                        }
+                    }
+                    newMinute = newMinute + minute;
+                    if (newMinute > 59)
+                    {
+                        if (newMinute = 60)
+                        {
+                            newHour = newHour + 1
+                            newMinute = newMinute - 1
+                        }
+                        else
+                        {
+                            newHour = newHour + parseInt((newMinute/60))
+                        }
+                    }
+                    newHour = newHour + hour;
+                    if (newHour > 23)
+                    {
+                        if (newHour = 24)
+                        {
+                            newHour = 0
+                        }
+                        else
+                        {
+                            newHour = (newHour - 23)
+                        }                        
+                    }
+                    alert("Llegará a las: " + newHour + ":" + newMinute + ":" + NewSecond)
+                }
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

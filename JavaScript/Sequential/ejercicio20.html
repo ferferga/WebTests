@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 20</title>
+        <script>
+            var two = parseFloat(prompt("Número de monedas de 2 €"))
+            var one = parseFloat(prompt("Número de monedas de 1 €"))
+            var fifty = parseFloat(prompt("Número de monedas de 50cts"))
+            var twenty = parseFloat(prompt("Número de monedas de 20cts"))
+            var ten = parseFloat(prompt("Número de monedas de 10cts"))
+            if (isNaN(two) || isNaN(one) || isNaN(fifty) || isNaN(ten) || isNaN(twenty))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                two = two*2
+                fifty = fifty*0.50
+                twenty = twenty*0.20
+                ten = ten*0.10
+                var total = two + one + fifty + twenty + ten
+                alert("Dinero total: " + total)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

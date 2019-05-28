@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 10</title>
+        <script>
+            var parciales = parseFloat(prompt("Parciales"))
+            var examen = parseFloat(prompt("Examen Final"))
+            var trabajo = parseFloat(prompt("Trabajo Final"))
+            if (isNaN(parciales) || isNaN(examen) || isNaN(trabajo))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var parc = parciales*(55/100)
+                var exa = examen*(30/100)
+                var tra = trabajo*(15/100)
+                var total = parc+exa+tra
+                alert("Parciales: " + parc + "\nExamen final: " + exa + "\nTrabajo final: " + tra + "\nTotal: " + total)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

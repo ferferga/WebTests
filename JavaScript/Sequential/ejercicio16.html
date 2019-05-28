@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 16</title>
+        <script>
+            var distance = parseFloat(prompt("Distancia (m)"))
+            var fast = parseFloat(prompt("Velocidad del vehículo que está detrás (km/h)\n(Debe ser mayor que la del vehículo delantero)"))
+            var slow = parseFloat(prompt("Velocidad del vehículo que está delante (km/h)\n(Debe ser menor que la del vehículo trasero)"))
+            if(isNaN(distance) || isNaN(slow) || isNaN(fast))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                if(slow>=fast)
+                {
+                    alert("Los datos introducidos no son lógicos. El vehículo delantero va más rápido o igual que el trasero, por lo que nunca se cruzarán")
+                }
+                else
+                {
+                    slow = slow/parseFloat(3.6);
+                    fast = fast/parseFloat(3.6);
+                    // x=v1*t
+                    // distance - x=v2*t
+                    // distance -(v1*t)=v2*t
+                    var time = distance/(slow + fast);
+                    time = time/60;
+                    alert("El vehículo más lento tardará " + time + " en alcanzar al más rápido")
+                }
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 8</title>
+        <script>
+            var salary = parseFloat(prompt("Salario"))
+            var venta1 = parseFloat(prompt("Importe Venta 1"))
+            var venta2 = parseFloat(prompt("Importe Venta 2"))
+            var venta3 = parseFloat(prompt("Importe Venta 3"))
+            if (isNaN(salary) || isNaN(venta1) || isNaN(venta2) || isNaN(venta3))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var com = 0.1;
+                var com1 = venta1*com;
+                var com2 = venta2*com;
+                var com3 = venta3*com;
+                var total = salary + com1 + com2 + com3;
+                alert("Comisión Venta 1: " + com1 + "\nComisión Venta 2: " + com2 + "\nComisión Venta 3: " + com3 + "\nSalario total: " + total)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 14</title>
+        <script>
+            var number = parseFloat(prompt("Número"))
+            if(isNaN(number))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                number = number.toString();
+                number = number.split("");
+                number = number.reverse();
+                number = number.join("");
+                alert("El número invertido es: " + number)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

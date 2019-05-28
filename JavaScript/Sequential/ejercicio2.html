@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 2</title>
+        <script>
+            var base = parseFloat(prompt("¿Cuál es la base del rectángulo?"))
+            var height = parseFloat(prompt("¿Cuál es su altura?"))
+            if (isNaN(base) || isNaN(height))
+            {
+                alert("Los datos introducidos no son números")
+            }
+            else
+            {
+                var area = (base*height)/2
+                var perimetro = (base*2)+(height*2)
+                alert("El área del rectángulo es: " + area + "\nSu perímetro es: " + perimetro)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

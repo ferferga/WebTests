@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 3</title>
+        <script>
+            var cateto1 = parseFloat(prompt("¿Cuál es la medida de uno de los catetos?"))
+            var cateto2 = parseFloat(prompt("¿Cuál es la medida del otro cateto?"))
+            if (isNaN(cateto1) || isNaN(cateto2))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var pitagoras = (Math.pow(cateto1, 2) + Math.pow(cateto2, 2))
+                var hipotenusa = Math.sqrt(pitagoras)
+                alert("La hipotenusa es: " + hipotenusa)
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

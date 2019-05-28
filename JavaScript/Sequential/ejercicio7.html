@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 7</title>
+        <script>
+            var minutes = parseFloat(prompt("Minutos"))
+            if (isNaN(minutes))
+            {
+                alert("Los datos introducidos no son numéricos")
+            }
+            else
+            {
+                var hours = parseInt(minutes/60)
+                var min = minutes - (hours*60)
+                alert("Los minutos introducidos son " + hours + " horas y " + min + " minutos")
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

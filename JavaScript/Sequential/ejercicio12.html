@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 12</title>
+        <script>
+            var number1 = prompt("Coordenada 1 (x,y)")
+            var number2 = prompt("Coordenada 2 (x,y)")
+            var x1 = parseFloat(number1.split(",")[0]);
+            var y1 = parseFloat(number1.split(",")[1]);
+            var x2 = parseFloat(number2.split(",")[0]);
+            var y2 = parseFloat(number2.split(",")[1]);
+            var distance = Math.sqrt(Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2))
+            alert("Diferencias: " + distance)
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+    </body>
+</html>
