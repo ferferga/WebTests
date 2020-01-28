@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe!</title>
+        <style>
+            table.main {
+                border: 1px solid grey;
+            }
+            table.header, span {
+                margin-left: 2%;
+            }
+            td.bottom {
+                border: none;
+            }
+            table.bottom {
+                width: 16%;
+            }
+            td {
+                border: 1px solid grey;
+                width: 50px;
+            }
+            td.header {
+                border: none;
+                width: 100%;
+            }
+            td.short {
+                width: 1px;
+            }
+            input {
+                width: 30px;
+            }
+            input.button {
+                width: 60px;
+                margin-left: 2%;
+            }
+            span {
+                width:14%;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="header">
+            <tr>
+                <td align="center" class="header"><strong>TRES EN RAYA</strong></td>
+            </tr>
+            <tr>
+                <td class="header"><strong>Juego oficial del <u>IES</u></strong></td>
+            </tr>
+        </table class="main">      
+        <table>
+            <th>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+            </th>
+            <tr>
+                <td class="short">1</td>
+                <td><img src="cancel.png"/></td>
+                <td><br/></td>
+                <td><img src="cancel.png"/></td>
+            </tr>
+            <tr>
+                <td class="short">2</td>
+                <td><br/></td>
+                <td><img src="ok.png"/></td>
+                <td><br/></td>
+            </tr>
+            <tr>
+                <td class="short">3</td>
+                <td><img src="ok.png"/></td>
+                <td><br/></td>
+                <td><br/></td>
+            </tr>
+        </table>
+        <span>
+            Turno para jugador UNO.
+        </span>
+        <table class="bottom">
+            <tr>
+                <td class="bottom">Fila</td>
+                <td class="bottom"><input type="text"/></td>
+            </tr>
+            <tr>
+                <td class="bottom">Columna</td>
+                <td class="bottom"><input type="text" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bottom"></td>
+            </tr>
+        </table>
+        <span>
+            <input class="button" type="submit" value="Enviar">
+        </span>        
+    </body>
+</html>

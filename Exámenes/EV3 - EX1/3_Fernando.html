@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplicador!</title>
+        <style>
+            .result-content {
+                background-color: lightskyblue;
+                border: 3px solid blue;
+                border-radius: 15px;
+                margin-top: 50px;
+                padding: 25px;
+                position: relative;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".result-content").fadeToggle(duration=0);
+                $("#btn-show").click(function(){
+                    $(".result-content").fadeOut(duration=0);
+                    $(".result").empty();
+                    var i = 10;
+                    while (i >= 1)
+                    {
+                        var res = ($("#input-number").val() + "x" + i + " = " + eval($("#input-number").val() + "*" + i));
+                        $(".result").prepend(res + "<br/>");
+                        i--;
+                    }
+                    $(".result-content").fadeIn(duration=2000);
+                });
+                $(".hide-button").click(function(){
+                    $(".result-content").fadeOut(duration=2000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Inserta a continuación un número, para sacar su tabla de multiplicar</p>
+        <input id="input-number" type="text" value=""/>
+        <button id="btn-show">Mostrar tabla</button>
+        <div class="result-content">
+            <div class="result"></div>
+            <br/>
+            <button class="hide-button">Ocultar</button>
+        </div>
+    </body>
+</html>

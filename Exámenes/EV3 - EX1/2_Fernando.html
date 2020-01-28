@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contador de palabras</title>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#area").click(function (){
+                    var text = $(this).html();
+                    if (text == "Escribe aquí tu texto")
+                    {
+                        $(this).empty();
+                    }
+                });
+                $("#count-btn").click(function(){
+                    var text = $("#area").val();
+                    if (text == "Escribe aquí tu texto")
+                    {
+                        var count1 = 0;
+                        var count = 0;
+                    }
+                    else
+                    {
+                        var count1 = text.split(" ").length;
+                        var count = text.length;
+                    }
+                    alert("Se han introducido " + count1 + " palabras, habiendo un total de " + count + " caracteres.");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <textarea rows="10" cols="40" id="area">Escribe aquí tu texto</textarea>
+        <br/>
+        <button id="count-btn">Contar palabras</button>
+    </body>
+</html>

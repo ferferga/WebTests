@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Ejercicio 2</title>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                $(".output").empty()
+                var dividendo = parseInt($("#dividendo").val())
+                var divisor = parseInt($("#divisor").val())                
+                if (isNaN(dividendo) || isNaN(divisor))
+                {
+                    $(".output").append(
+                    "<p>No se ha introducido ningún dato o se han introducido caracteres extraños</p>"); 
+                }
+                else
+                {
+                    var cociente = dividendo/divisor;
+                    cociente = parseInt(cociente)
+                    var resto = dividendo%divisor;
+                    $(".output").append(
+                        "<p>Cociente: " + cociente + "</p><p>Resto: " + resto + "</p>"
+                    );
+                }               
+            });            
+        });
+    </script>
+</head>
+<body>
+    <p>Dividendo</p>
+    <input id="dividendo" type="number" size="40" value="">
+    <p>Divisor</p>
+    <input id="divisor" type="number" size="40" value="">
+    <button>Dividir</button>
+    <hr>
+    <p>Texto de salida: <span id="salida"></p>
+    <div class="output">        
+    </div>
+</body>
+</html>

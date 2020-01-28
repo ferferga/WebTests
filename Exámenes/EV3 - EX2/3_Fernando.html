@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>EJERCICIO 3</title>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                $("#Rpesetas").empty()
+                $("#Reuros").empty()
+                $(".output").empty()
+                var euros = parseFloat($("#euro").val())
+                var pesetas = parseFloat($("#pesetas").val())
+                if (isNaN(euros) && isNaN(pesetas))
+                {
+                    $(".output").append("<p>No se ha rellenado ninguno de los campos</p>")
+                }
+                else
+                {
+                    var resultPesetas = (euros*166.386);
+                    var resultEuros = (pesetas/166.386);
+                    if (isNaN(euros))
+                    {                        
+                        $("#Reuros").append("En euros: " + resultEuros)
+                        $(".output").append("<p>Conversión a euros realizada correctamente</p>");
+                    }
+                    else if (isNaN(pesetas))
+                    {                        
+                        $("#Rpesetas").append("En pesetas: " + resultPesetas);
+                        $(".output").append("<p>Conversión a pesetas realizada correctamente</p>");
+                    }
+                    else
+                    {
+                        $("#Reuros").append("En euros: " + resultEuros);
+                        $("#Rpesetas").append("En pesetas: " + resultPesetas);
+                        $(".output").append("<p>Conversión de ambas divisas realizada correctamente</p>");
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Euros: </td>
+            <td><input id="euro" type="number" size="40" value=""></td>
+            <td id="Rpesetas"></td>
+        </tr>
+        <tr>
+            <td>Pesetas: </td>
+            <td><input id="pesetas" type="number" size="40" value=""></td>
+            <td id="Reuros"></td>
+        </tr>
+    </table>    
+    <button>Convertir</button>
+    <hr>
+    <p>Texto de salida: <span id="salida"></p>
+    <div class="output">
+    </div>
+</body>
+</html>

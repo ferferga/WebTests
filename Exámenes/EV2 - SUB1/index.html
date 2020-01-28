@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Visit Canadá</title>
+        <style>
+            *{
+                box-sizing: content-box;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+            body {
+                padding: 2%;
+            }
+            #title {
+                float: left;
+                border-right: 1px solid grey;
+                width: 13%;
+            }
+            #desc {
+                float: left;
+                color: #777777;
+                margin-top: 2%;
+                margin-left: 1%;
+            }
+            #contacto1, #email, #contacto2, #phone {
+                float: right;
+                margin-right: 10px;
+                clear: left;
+            }
+            #email {
+                border-right: 1px solid grey;
+                padding-right: 5px;
+            }
+            .menu {
+                background-color: #303030;
+                color: white;
+                width: 100%;
+                min-height: 50px;
+                border-radius: 15px;
+                margin-top: 10px;
+            }
+            #home, #features, #shortcodes, #portfolio, #blog, #contact {
+                float: left;
+                margin: 5px;
+                border-right: 1px solid grey;
+                background-color: #303030;
+                padding: 10px;
+                padding-right: 20px;
+            }
+            #search {
+                float: right;
+                width: 200px;
+                background-color: white;
+                padding: 10px;
+                margin-top: 15px;
+            }
+            #search-ico {
+                float: right;
+                padding: 15px;
+            }
+            .content {
+                display: flex;
+                min-width: 100%;
+                flex-direction: row;
+                margin-top: 25px;
+            }
+            .photos > div > img {
+                width: 100%;
+                height: 100%;
+                min-width: 819px;
+                min-height: 491px;
+            }
+            .articles, .articles2 {
+                width: 25%;
+                margin-right: 20px;
+                min-width: 200px;
+            }
+            .articles2{
+                margin-right: 0;
+                margin-left: 20px;
+                display: flex;
+                align-self: flex-end;
+                flex-direction: column;
+            }
+            .articles > div:nth-child(odd) {
+                border: 1px dashed #777777;
+            }
+            .articles2 > div:nth-child(even) {
+                border: 1px dashed #777777;
+            }
+            #louise-description {
+                position: absolute;
+                width: 20%;
+                left: 600px;
+                /* top: 50%; */
+                top: 280px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            #moraine-description {
+                position: absolute;
+                width: 20%;
+                left: 600px;
+                top: 840px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            #left-moraine {
+                position: absolute;
+                width: 2%;
+                /* left: 25%; */
+                left: 300px;
+                top: 900px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            #right-moraine {
+                position: absolute;
+                width: 2%;
+                left: 1000px;
+                /* top: 140%; */
+                top: 900px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            #right-louise {
+                position: absolute;
+                width: 2%;
+                left: 1000px;
+                /* top: 140%; */
+                top: 430px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            #left-louise {
+                position: absolute;
+                width: 2%;
+                left: 300px;
+                top: 430px;
+                background-color: #777777;
+                color: white;
+                padding: 10px;
+                opacity: 0.8;
+            }
+            .footer{
+                display: grid;
+                margin-top: 20px;
+
+            }
+            .footer > div {
+                display: grid;
+                grid-template-columns: 33%,33%,33%;
+            }
+            .footer > div > img {
+                grid-column: 1/2;
+            }
+            .footer > div > div {
+                grid-column: 2;
+            }
+            @media only screen and (max-width: 600px) {
+                *{
+                    box-sizing: border-box;
+                }
+                .photos > div > div {
+                    display: none;
+                }
+                .photos > div > img {
+                    min-width: 98%;
+                    min-height: 98%;
+                }
+                .content {
+                    flex: initial;
+                    flex-direction: column;
+                }
+                .photos {
+                    order: -1;
+                }
+                .articles, .articles2 {
+                    width: 100%;
+                    margin: 0;
+                    padding: 15px;
+                }
+                body {
+                    padding: 0;
+                }
+                #title {
+                    min-width: 30%;
+                }
+                .menu {
+                    min-height: 100px;
+                }
+			}
+        </style>
+	</head>
+    <body>
+        <div class="header">
+    	    <h2 id="title">Visita Canadá<a style="color: green">!!</a></h2>
+            <div id="desc">It's time to impress your visitors</div>
+            <div id="phone">+48 880 450 120</div>
+            <img id="contacto2" src="contacto2.gif"/>          
+            <div id="email">support@visitacanada.com</div>
+            <img id="contacto1" src="contacto1.gif"/>
+        </div>
+        <div style="clear: right"></div>
+        <div class="menu">
+    	    <div id="home">Home</div>
+    	    <div id="features">Features</div>
+    	    <div id="shortcodes">Shortcodes</div>
+    	    <div id="portfolio">Portfolio</div>
+    	    <div id="blog">Blog</div>
+            <div id="contact">Contact</div>
+            <img id="search-ico" src="search-ico.png" style="text-align: right"/>
+            <div id="search"></div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="content">
+            <div class="articles">
+                <div>
+                    <h3>Article 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et malesuada diam, at accumsan ipsum. Nulla vel sapien nec est molestie imperdiet.</p>
+                </div>
+                <div>
+                    <h3>Article 2</h3>
+                    <p>Aenean vehicula quam purus, a lacinia ligula malesuada vitae. Vivamus consequat dolor vel dui malesuada aliquet. Maecenas lacinia turpis in cursus posuere.</p></div>
+                <div>
+                    <h3>Article 3</h3>
+                    <p>Etiam placerat venenatis vehicula. Sed arcu mauris, blandit fringilla ex porta, maximus porta sem. Quisque posuere nisl mollis erat porta porta.</p>
+                </div>
+            </div>
+            <div class="photos">
+                <div>
+                    <img src="lakemoraine.jpg"/>
+                    <div id="moraine-description">
+                        <h2>Lake Moraine</h2>
+                        <p>Donec scelerisque alliquet mi, non venenatis urnas iaculis. Utea id nila ante. Cras est massa,
+                            interdum ateal imperdiet etean, gravida eu quame. Aeneana volupat hendrerit posuere.</p>
+                    </div>
+                    <div id="right-moraine">&gt;</div>
+                    <div id="left-moraine">&lt;</div>
+                </div>
+                <div>
+                    <img src="lakelouise.jpg"/>
+                    <div id="louise-description">
+                        <h2>Lake Louise</h2>
+                        <p>Donec scelerisque alliquet mi, non venenatis urnas iaculis. Utea id nila ante. Cras est massa,
+                        interdum ateal imperdiet etean, gravida eu quame. Aeneana volupat hendrerit posuere.</p>
+                    </div>
+                    <div id="right-louise">&gt;</div>
+                    <div id="left-louise">&lt;</div>
+                </div>                
+            </div>
+            <div class="articles2">
+                <div>
+                    <h3>Article 4</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et malesuada diam, at accumsan ipsum. Nulla vel sapien nec est molestie imperdiet.</p>
+                </div>
+                <div>
+                    <h3>Article 5</h3>
+                    <p>Aenean vehicula quam purus, a lacinia ligula malesuada vitae. Vivamus consequat dolor vel dui malesuada aliquet. Maecenas lacinia turpis in cursus posuere.</p></div>
+                <div>
+                    <h3>Article 6</h3>
+                    <p>Etiam placerat venenatis vehicula. Sed arcu mauris, blandit fringilla ex porta, maximus porta sem. Quisque posuere nisl mollis erat porta porta.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div style="grid-column: 1">
+                <img src="tele.jpg"/>
+                <div>Fresh & Clean Design</div>
+                <div>Proin iaculis purus consequat sem cursus digni ssim. Donec porttitor entume suscipit. Aeneam rhoncus posuere odio in tincidunt.</div>
+            </div>
+            <div style="grid-column: 2">
+                <img src="gear.jpg"/>
+                <div>Easy to Customize</div>
+                <div>Proin iaculis purus consequat sem cursus digni ssim. Donec porttitor entume suscipit. Aeneam rhoncus posuere odio in tincidunt.</div>
+            </div>
+            <div style="grid-column: 3">
+                <img src="movil.jpg"/>
+                <div>Fully Responsive</div>
+                <div>Proin iaculis purus consequat sem cursus digni ssim. Donec porttitor entume suscipit. Aeneam rhoncus posuere odio in tincidunt.</div>
+            </div>
+        </div>
+    </body>
+</html>

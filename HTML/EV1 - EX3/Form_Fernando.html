@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+        <style>
+            hr {
+                display: block;
+                border-color: black;
+                border-style: solid;
+            }
+            h1{
+                margin-left: 20px;
+            }
+            div.grey {
+                margin-left: 2px;
+                background-color:rgba(128, 128, 128, 0.39);
+                width: 500px;
+            }
+            div.white {
+                margin-left: 2px;
+                background-color: white;
+                width: 500px;
+            }
+            input {
+                float: right;
+                margin-right: 15px;
+                color: grey;
+            }
+            select {
+                float: right;
+                width: 201px;
+                margin-right: 15px;
+            }
+            input.options {
+                float: left;
+            }
+            input.checkbox {
+                float: left;
+                margin-left: 300px;
+            }
+            div.rightFloat {
+                float: right;
+                margin-right: 108px;
+            }
+            div.rightFloatcheckbox {
+                float: right;
+                margin-right: 4px;
+                margin-top: -20px;
+                margin-left: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Meeting rooms reservation form</h1>
+        <form action="php">
+            <div class=grey>
+                <hr/>
+                Your name<b style="color: red;">*</b>
+                <input type="text" value="Name"/>
+                <hr/>              
+            </div>
+            <div class="white">
+                Your e-mail: <b style="color: red;">*</b>
+                <input type="text" value="e-mail"/>                
+            </div>
+            <div class="grey">
+                <hr/>
+                Department: <b style="color: red;">*</b>
+                <select>
+                    <option>Sales</option>
+                    <option>Entras</option>
+                    <option>Marketing</option>
+                    <option>IT</option>
+                    <option>Secretary</option>
+                    <option>Direction</option>
+                    <option>Human resources</option>
+                    <option>Engineering</option>
+                </select>
+                <hr />                
+            </div>
+            <div class="white">                
+                Select your desired room: <b style="color: red;">*</b>
+                <div class="rightFloat">
+                    <input class="options" type="radio" value="A" name="room" />Type A<br/>
+                    <input class="options" type="radio" value="B" name="room" />Type B<br/>
+                    <input class="options" type="radio" value="C" name="room" />Type C<br/>                    
+                </div>
+                <br/><br/><br/>              
+            </div>
+            <div class="grey">
+                <hr />
+                Room's extras:
+                <div class="rightFloatcheckbox">
+                    <input class="checkbox" type="checkbox" value="A" name="extra" />Easels and pens<br/>
+                    <input class="checkbox" type="checkbox" value="B" name="extra" />TV<br/>
+                    <input class="checkbox" type="checkbox" value="C" name="extra" />Coffee, Tea and Water&nbsp;&nbsp;<br/>
+                </div>
+                <br/><br/><br/>
+                <hr/>
+            </div>
+            <div class="white">
+                Reservation date <b style="color: red;">*</b>:
+                <input type="text" value="31/MM/YYYY" />
+            </div>
+            <div class="grey">
+                <hr/>
+                Reservation hour <b style="color: red;">*</b>:
+                <input type="text" value="--:--" />
+                <hr/>
+            </div>
+        </form>
+    </body>
+</html>

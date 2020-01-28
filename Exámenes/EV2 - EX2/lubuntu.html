@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+    <title>Prueba escrita 14/03/2019</title>
+    <style>
+    * {
+        font-family: 'Oswald', sans-serif;
+		box-sizing: content-box;
+		margin: 0;
+    }
+	.head {
+		display: flex;
+		justify-content: space-between;
+		padding: 25px;
+		margin-right: 100px;
+		margin-left: 100px;
+	}
+	.head > img {
+		width: 100px;
+		height: 25px;
+		margin-left: 40%;
+	}
+	.main > div{
+		position: relative;
+		bottom: 350px;
+		top: -25%;
+		left: 10%;
+		opacity: 0.8;
+		padding: 10px;
+		color: white;
+	}
+	@media only screen and (min-width: 401px) and (max-width: 960px) {
+		.main > div {
+			bottom: 250px;
+		}
+	}
+	.main > div:nth-child(2)
+	{
+		position: relative;
+		background-color: rebeccapurple;
+		max-width: 45px;
+	}
+	.main > div:nth-child(3)
+	{
+		position: relative;
+		background-color: darkgrey;
+		max-width: 300px;
+	}
+	.main > img {
+		width: 100%;
+		height: 75%;
+	}
+	.about > div {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 25px;
+		color: white;
+	}
+	.about > h1 {
+		margin-left: 50%;
+	}
+	.about > div > div:nth-child(1), .about > div > div:nth-child(3) {
+		background-color:rgb(145, 138, 170);
+		max-width: 200px;
+	}
+	.about > div > div:nth-child(1) > div, .about > div > div:nth-child(3) > div{
+		padding: 5px;
+	}
+	.about > div > div:nth-child(1) > img, .about > div > div:nth-child(3) > img {
+		min-width: 200px;
+		max-width: 300px;
+		max-height: 150px;
+	}
+	.about > div > div:nth-child(2) {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 65%;
+		color: black;
+		border: 1px solid rgb(145, 138, 170);
+	}
+	.about > div > div:nth-child(2) > div:nth-child(2) {
+		margin-top: 30px;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 5%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.about > div > div:nth-child(2) > div:nth-child(2) > div {
+		background-color:royalblue;
+		color: white;
+		max-width: 350px;
+		border-radius: 25px;
+		padding: 25px;
+	}
+	.about > div > div:nth-child(2) > div:nth-child(3) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.about > div > div:nth-child(2) > div:nth-child(3) > img {
+		max-width: 250px;
+		max-height: 178px;
+	}
+	.features {
+		background-color:rgb(145, 138, 170);
+		color: white;
+	}
+	.features > h1 {
+		margin-left: 50%;
+		margin-bottom: 15px;		
+	}
+	.features > div {
+		display: grid;
+		grid-template-columns: 256px 256px 256px 256px 256px;
+		grid-template-rows: 50% 50%;
+		border: 1px solid white;
+		max-width: 1280px;
+	}
+	.features > div > img {
+		width: 256px;
+		height: 205px;
+	}
+	.features > div > div {
+		margin-top: 35%;
+		margin-left: 30%;
+	}
+	#up {
+		position: fixed;
+		background-color: royalblue;
+		color: white;
+		width: 50px;
+		height: 50px;
+		padding: 15px;
+		border-radius: 50px;
+	}
+	@media only screen and (max-width: 400px) {
+		* {
+			max-width: 400px;
+		}
+		.head {
+			max-width: 400px;
+			display: flex;
+			justify-content: space-between;
+		}
+		.head > img {
+			width: 100px;
+			height: 25px;
+		}
+		.main > div:nth-child(2){
+			display:hidden;
+		}
+		.main > div:nth-child(3){
+			display:hidden;
+		}
+		.main > img {
+			max-width: 400px;
+			max-height: 140px;
+		}
+		.about > div {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 25px;
+			color: white;
+		}
+		.about > div > div:nth-child(2) > div:nth-child(3) > img {
+			max-width: 250px;
+			max-height: 178px;
+		}	
+	}		
+    </style>
+</head>
+<body>
+	<div class="head">
+		<div>HOME</div>
+		<div>DOWNLOAD</div>
+		<div>BLOG</div>
+		<div>FORUM</div>
+		<div>DOCUMENTATION</div>
+		<div>SUPPORT</div>
+		<div>ABOUT</div>
+		<img src="img/Lubuntu_logo.svg"/>
+	</div>
+
+	<div class="main">
+		<img src="img/lubuntu-office-1.png"/>
+		<div>OFFICE</div>
+		<div>Lubuntu comes with lightweight office solutions.</div>
+	</div>
+	<div class="about">
+		<h1>ABOUT</h1>
+		<div>
+			<div>
+				<img src="img/left-column.png"/>
+				<div>Lubuntu is a fast and lightweight operating system with a clean and easy-to-use user interface.</div>
+			</div>
+			<div>				
+				<div>It is a Linux system, that uses the minimal desktop LXDE/LXQT, and a selection of light applications. Because of this, Lubuntu has very low hardware requirements.</div>
+				<div>
+					<div id="button">Download lubuntu (Intel x86)</div>
+					<div id="button">Download lubuntu (64-bit AMD64)</div>
+					<div id="button">Download lubuntu (Raspberry)</div>
+				</div>
+				<div>
+					<img src="img/xps-6.jpg"/>
+					<img src="img/RPi-Logo-Reg-SCREEN.png"/>
+				</div>				
+			</div>
+			<div>
+				<img src="img/right-column.png"/>
+				<div>Lubuntu was founded by Mario Behling and has been grown for many years by Julien Lavergne. Please join us and install Lubuntu on your computer.</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="features">
+		<h1>FEATURES</h1>
+		<div>
+			<img src="img/grid-1.png"/>
+			<div>A lot of windows</div>
+			<img src="img/grid-2.png"/>
+			<div>Document edition</div>
+			<img src="img/grid-3.png"/>
+			<div>The power of Internet</div>
+			<img src="img/grid-4.png"/>
+			<div>You can watch videos</div>
+			<img src="img/grid-5.png"/>
+			<div>Image editing</div>
+		</div>		
+	</div>
+	<div id="up">Up</div>
+</body>
+</html>

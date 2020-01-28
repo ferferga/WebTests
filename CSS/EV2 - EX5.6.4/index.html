@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+        <title>Flex Elements Examples</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            div.main {
+                min-height: 100vh;                
+            }
+            div.header {
+                background-color: blue;
+                min-height: 10vh;
+                margin: 0;
+            }
+            div.content {
+                background-color: green;
+                display: flex;
+                flex-direction: row;
+            }
+            div.leftbar {
+                background-color: red;
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+                min-height: 100vh;
+            }
+            div.main_content {
+                background-color: green;
+                display: flex;
+                flex-direction: row;
+                overflow: visible;
+            }
+            #item {                
+                background-color: yellow;
+                height: 15%;
+                width: 92%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            #item2 {                
+                background-color: yellow;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                height: 83.5%;
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+            </div>
+            <div class="content">
+                <div class="leftbar">
+                    <div id="item"></div>
+                    <div id="item"></div>
+                    <div id="item"></div>
+                    <div id="item"></div>
+                    <div id="item"></div>
+                </div>
+                <div class="main_content">
+                    <div id="item2"></div>
+                    <div id="item2"></div>
+                    <div id="item2"></div>
+                    <div id="item2"></div>
+                    <div id="item2"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

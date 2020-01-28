@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+
+    <style>
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn-equal").click(function () {
+                var expression = $("#input-calc").val();
+                var result = eval(expression);
+                $("#input-calc").val(result);
+            });
+            $("#clear").click(function () {
+                $("#input-calc").val("");
+            });
+            $(".normal-btn").click(function(){
+                var al = $(this).html();
+                var originalValue = $("#input-calc").val();
+                $("#input-calc").val(originalValue + al)
+            });
+            $(".operand-btn").click(function(){
+                var al = $(this).val();
+                var originalValue = $("#input-calc").val();
+                $("#input-calc").val(originalValue + al)
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Inserta a continuación una expresión de calculadora, como por ejemplo "2 + 3 * 4"</p>
+    <input id="input-calc" type="text" value="2 + 3 * 4"/>
+    <br /><br/>
+    <table>
+        <tr>
+            <td><button class="normal-btn">0</button></td>
+            <td><button id="clear">C</button></td>
+            <td><button id="btn-equal">=</button></td>
+            <td><button class="operand-btn" value="*">x</button></td>
+        </tr>
+        <tr>
+            <td><button class="seven">7</button></td>
+            <td><button class="normal-btn">8</button></td>
+            <td><button class="normal-btn">9</button></td>
+            <td><button class="operand-btn" value="/">÷</button></td>
+        </tr>
+        <tr>
+            <td><button class="normal-btn">4</button></td>
+            <td><button class="normal-btn">5</button></td>
+            <td><button class="normal-btn">6</button></td>
+            <td><button class="normal-btn">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="normal-btn">1</button></td>
+            <td><button class="normal-btn">2</button></td>
+            <td><button class="normal-btn">3</button></td>
+            <td><button class="normal-btn">+</button></td>
+        </tr>
+    </table>
+</body>
+</html>

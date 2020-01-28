@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<games xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="games.xsd">
+    <game score="1-1">
+        <home-team>Roma</home-team>
+        <ex-team>Lazio</ex-team>
+        <scores>
+            <score minute="15">
+                <player>Klose</player>
+            </score>
+            <score minute="85">
+                <player>Tox</player>
+            </score>
+        </scores>
+        <yellows>
+            <player>Tox</player>
+            <player>Hernanes</player>
+        </yellows>
+        <reds>
+            <player>Kjaer</player>
+        </reds>
+    </game>
+</games>

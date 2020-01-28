@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio - HerbalFarma</title>
+        <style>
+            body, p {
+                margin: 0 auto;
+                box-sizing: content-box;
+            }
+            .header {
+                display: grid;
+                grid-template-columns: 25% 75%;
+            }
+            #checked {
+                background-color: rgb(139, 99, 47);
+                color: white;
+            }
+            #checked:active {
+                background-color: rebeccapurple;
+                color: cyan;
+            }
+            .links {
+                padding: 50px;
+                grid-column: 2 / 2;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: -20px;
+                font-family: "Trebuchet MS", Helvetica, sans-serif;
+            }
+            .links > a {
+                padding: 20px;                
+                font-weight: bold;
+                color: black;
+                text-decoration: none;
+                text-transform: uppercase;
+                margin-left: 10px;
+                border-radius: 20px;
+            }
+            .links > a:hover {
+                background-color: burlywood;
+                color: white;
+            }
+            .links > a:active {
+                background-color: rebeccapurple;
+                color: cyan;
+            }
+            .search {
+                background-color: yellowgreen;
+                padding: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 5%;
+                margin-right: 5%;
+                border-radius: 10px;
+            }
+            input {
+                border-radius: 10px;
+                width: 50%;
+                height: 40px;
+                color: grey;
+                border-color: white;
+                margin-right: 10%;
+                border: 0;
+            }
+            .content {
+                display: grid;
+                grid-template-columns: 380px 150px 500px;
+                padding: 20px;
+                margin-top: 10px;
+                border: 1px solid whitesmoke;
+                box-shadow: 2px;
+                grid-column-gap: 60px;
+                margin-left: 5%;
+                margin-right: 5%;
+                border-radius: 2px;
+                overflow: auto;
+            }
+            .subgrid {
+                grid-column: 3 / 3;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 50% 50%;
+            }
+            .subgrid > img{
+                height: 50%;
+                width: 150px;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .prefooter {
+                margin-top: 0;
+                background-color: yellowgreen;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 20px;
+                font-size: 20px;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+            .footer {
+                margin-top: 30px;
+                display: grid;
+                padding: 20px;
+                margin-left: 5%;
+                margin-right: 5%;
+                grid-gap: 100px;
+            }
+            .subfooter-left {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                grid-column: 1 / 2;
+                grid-row: 1;
+            }
+            .subfooter-left > img {
+                height: 65px;
+            }
+            .subfooter-right {
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                grid-column: 2 / 2; 
+                grid-row: 1;
+            }
+            .subfooter-right > img{
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px; 
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img style="padding: 20px" src="logo.png"/>
+            <div class="links">
+                <a id="checked" href="5.7.3_Fernández_Fernando.html">Inicio</a>
+                <a href="Cosmética.html">Cosmética</a>
+                <a href="HuertoUrbano.html">Huerto Urbano</a>
+                <a href="EcoRegalos.html">Eco Regalos</a>
+                <a href="EcoHogar.html">Eco Hogar</a>
+                <a href="Blog.html">Blog</a>
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Buscar productos..." />
+            <img src="Search.PNG">
+        </div>
+        <div class="content">
+            <img src="huerto.jpg" style="grid-column: 1 / 3; grid-row: 1; border-radius: 50%; border: 8px solid rgb(139, 99, 47)" width="345px" height="300px"/>
+            <img src="tag.PNG" style="grid-column: 2 / 3; grid-row: 1" />
+            <div class="subgrid">
+                <img src="1.jpg" style="grid-column: 1 / 2; grid-row: 1 / 2;"/>
+                <img src="2.jpg" style="grid-column: 2 / 2; grid-row: 1 / 2" />
+                <img src="3.jpg" style="grid-column: 1 / 2; grid-row: 2 / 2" />
+                <img src="4.jpg" style="grid-column: 2 / 2; grid-row: 2 / 2" />
+            </div>
+        </div>
+        <div class="prefooter">
+            <p>Todo lo necesario para crear tu propio huerto urbano: Kits de cultivo, semillas ecológicas,
+                control de plagas... ¡Sigue nuestros consejos en el blog!
+            </p>
+        </div>
+        <div class="footer">
+            <div class="subfooter-left">
+                <img src="Envío.PNG">
+                <img src="Seguro.PNG">
+                <img src="Barato.PNG">
+            </div>
+            <div class="subfooter-right">
+                <p style="padding: 10px; background-color: yellowgreen; border-radius: 10px">Nuestros consejos</p>
+                <img src="blog.PNG" height="50px"/>           
+            </div>
+        </div>
+    </body>
+</html>

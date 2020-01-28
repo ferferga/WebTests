@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Ejercicio 5</title>
+
+    <script>
+        $(document).ready(function() {
+            $("p").toggle();
+            $("h2").click(function(){
+                $("h2").css("background-color","aliceblue");
+                $(this).css("background-color","lightblue");
+                $(this).siblings().toggle(duration=400);
+            });
+            $("#open").click(function(){
+                $("p").slideToggle(duration=400);
+            });
+            $("#close").click(function(){
+                $("h2").css("background-color","white");
+                $("p").slideUp(duration=400);
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        div {
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="close">Cerrar todo</button>
+    <button id="open">Abrir todo</button>
+    <div>
+        <h2>Título 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac erat dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod, nulla at fermentum pulvinar, nulla dolor faucibus elit, at finibus ex sapien et nibh. Mauris viverra enim ligula, et sodales purus pretium nec. Integer mollis ipsum lectus, id fringilla lectus tincidunt id. Suspendisse ultrices velit at consequat iaculis. Ut sed elit leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis convallis ante quis eros aliquam fermentum.</p>
+    </div>
+    <div>
+        <h2>Título 2</h2>
+        <p>Nullam faucibus non ligula sed maximus. Quisque in purus at mauris vehicula sodales. Integer ac augue mauris. Proin id enim vel risus porta fermentum et eu nulla. Nulla dictum aliquam porta. Quisque nec felis pellentesque, venenatis justo at, gravida erat. Mauris ullamcorper, lectus sit amet iaculis commodo, tellus metus euismod magna, nec molestie quam dui id urna. Fusce tempus semper tristique. Nunc nulla magna, aliquet non ullamcorper eu, vehicula efficitur odio. Sed faucibus quam nec ex laoreet, a semper velit sollicitudin. Proin posuere tempus ante non lacinia. Etiam efficitur vulputate massa, ac tristique nunc blandit nec. Praesent et velit interdum, interdum turpis sed, egestas est. Suspendisse interdum dui a felis sodales porta. Donec nec egestas sapien, ut pellentesque sem.</p>
+    </div>
+    <div>
+        <h2>Título 3</h2>
+        <p>Sed eu cursus tellus. Nulla vitae pretium felis. Pellentesque ultrices neque in tellus posuere, eget pretium enim imperdiet. Vivamus lorem felis, vulputate non massa ut, tincidunt tempus nisi. Fusce tortor sem, vestibulum non suscipit at, laoreet id ipsum. Etiam luctus ex luctus, hendrerit ante at, volutpat risus. Maecenas id fringilla tellus. Quisque libero felis, fermentum sit amet lectus fringilla, efficitur rutrum ligula. Praesent nec tempor sem. Integer augue arcu, mattis ac aliquet non, sollicitudin non mauris. Fusce dignissim eget turpis et sodales. Integer blandit at felis eget scelerisque. Phasellus pharetra mattis risus ut ultricies. Duis non augue mollis, luctus velit at, faucibus risus. Duis sed sapien neque. Nullam nec aliquam neque.</p>
+    </div>
+    <div>
+        <h2>Título 4</h2>
+        <p>Nulla tempor lacinia nisi ut gravida. Proin condimentum sagittis tellus, in vestibulum ipsum dictum in. Nulla ut porta nisl. Phasellus nec blandit sapien. Aenean quis laoreet tortor. Donec mollis, urna sed convallis dignissim, nunc eros bibendum leo, ut ullamcorper magna ante sed nunc. Nullam vel pharetra ex. Sed nisi lacus, efficitur in mi et, semper cursus metus. Nunc tellus lorem, mollis ac accumsan nec, euismod et ex. Suspendisse molestie aliquam justo quis aliquam. Etiam et congue augue, quis dapibus felis. Sed porta, quam non aliquet dapibus, mi justo lobortis nulla, nec tincidunt est augue commodo mi. Cras ac nunc arcu. Aliquam interdum tincidunt nunc in eleifend. Curabitur iaculis id erat et feugiat.</p>
+    </div>
+    <div>
+        <h2>Título 5</h2>
+        <p>Nullam id tristique nulla. Fusce et elit nisi. Integer justo ante, pellentesque vitae libero a, blandit tempus lorem. Quisque hendrerit hendrerit pellentesque. Suspendisse porta ullamcorper placerat. Nam sed felis dolor. Nam mattis felis non tortor faucibus, quis mollis tellus tincidunt. Fusce et venenatis neque. Donec consequat posuere dui, non gravida leo iaculis a. Aliquam vitae condimentum libero, euismod tempor leo. Nam rutrum elit erat, ut feugiat sem tempor at. Duis hendrerit pretium nibh mollis semper. Integer finibus sed leo nec sollicitudin.</p>
+    </div>
+</body>
+</html>

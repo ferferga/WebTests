@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leave Form</title>
+        <style>
+            table.main  {
+                width: 45%;
+                border: 1px solid grey;
+                border-collapse: collapse;
+            }
+            th, td.header, tr.header {
+                background-color: aqua;                
+                border-collapse: collapse;
+                height: 30px;
+                width: 25%;
+            }
+            td {
+                border: none;
+                height: 30px;
+            }
+            select.header {
+                border: none;
+                background-color: aqua;
+            }
+            select.first {
+                background-color: rgb(204, 196, 196);
+            }
+            input {
+                color: grey;
+            }
+            table {
+                width: 50%;
+                height: 50px;
+                border: 1 px solid grey;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table class="main">
+                <tr class="header">
+                    <td class="header"><strong>Leave Form</strong>
+                    </td>
+                    <td>
+                        <select class="header">
+                            <option>More actions</option>
+                            <option>Joining form</option>
+                            <option>Support form</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <table>
+                        <tr>
+                            <td><strong>Employee Email</strong></td>
+                            <td>
+                                <select class="first">
+                                    <option>appuser@zohocreator.com</option>
+                                    <option>ferferga@hotmail.com</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employee Id</strong></td>
+                            <td><input type="text" value="232"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employee name</strong></td>
+                            <td><input type="text" value="appuser"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Designation</strong></td>
+                            <td><input type="text" value="Team Leader"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leave type *</strong></td>
+                            <td>
+                                <select>
+                                    <option>-Select-</option>
+                                    <option>Dimission</option>
+                                    <option>Mandatory</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <table>
+                                <tr>
+                                    <td><strong>From *</strong></td>
+                                    <td><input type="date" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>To*</strong></td>
+                                    <td><input type="date" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>No of Days</strong></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
