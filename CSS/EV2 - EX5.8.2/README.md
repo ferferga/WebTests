@@ -1,0 +1,1 @@
+This exam exercise aims to be a demonstration of the capabilities of the ``flexbox`` and ``grid`` layout in a responsive manner
