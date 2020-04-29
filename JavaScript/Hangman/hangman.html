@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+    <head>
+        <title>Hangman Game</title>
+        <script>
+            var completeword = prompt("Type the sentence that the other person needs to guess. Be sure that nobody see it!");
+            var triedchars = new Array();
+            var lives = 0;
+            completeword = completeword.toString();
+            completeword = completeword.toUpperCase();
+            if (completeword.length == 0) {
+                window.alert("You must type something for continuing");
+                location.reload();
+            }
+            var stringarray = completeword.split("");
+            function underscoring(string) {
+                var underscore = "";
+                for (var i = 0; i < string.length; i++) {
+                    if (stringarray[i] == " ") {
+                        underscore = underscore + "  ";
+                    } else if (triedchars.includes(stringarray[i])) {
+                        underscore = underscore + stringarray[i];
+                    } else {
+                        underscore = underscore + " _ ";
+                    }
+                }
+                return underscore;
+            }
+            function checkIfCompleted() {
+                for (var i = 0; i < completeword.length; i++) {
+                    if (!triedchars.includes(stringarray[i])){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function updateHangman() {
+                var canvas = document.getElementById("myCanvas");
+                var ctx = canvas.getContext("2d");
+                if (lives == 1) {
+                    ctx.beginPath();
+                    ctx.rect(121.5, 20, 2, 50); // Rope
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 2) {
+                    ctx.beginPath();
+                    ctx.arc(122.5, 82, 10, 0, Math.PI * 2, true); // Head
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 3) {
+                    ctx.beginPath();
+                    ctx.rect(117.5, 94, 10, 100); // Body
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 4) {
+                    ctx.beginPath();
+                    ctx.rect(105.5, 105, 10, 70); // Left arm
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 5) {
+                    ctx.beginPath();
+                    ctx.rect(129.5, 105, 10, 70); // Right arm
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 6) {
+                    ctx.beginPath();
+                    ctx.rect(127.5, 195, 10, 80); // Left leg
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (lives == 7) {
+                    ctx.beginPath();
+                    ctx.rect(107.5, 195, 10, 80); // Right leg
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                } else {
+                    ctx.beginPath();
+                    ctx.rect(10, 370, 200, 2); // Floor
+                    ctx.rect(20, 5, 5, 365); // Hanger
+                    ctx.rect(10, 20, 125, 5); //Hang arm
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+            function update() {
+                document.getElementById("tried").classList.remove("hide");
+                var inputguess = document.getElementById("guess").value;
+                document.getElementById("guess").value = "";
+                inputguess = inputguess.toUpperCase();
+                if (inputguess.length > 1) {
+                    window.alert("You typed more than one character in the text field");
+                    return;
+                } else if (triedchars.includes(inputguess)) {
+                    window.alert("You already tried this character");
+                    return;
+                }
+                triedchars.push(inputguess);
+                document.getElementById("word-underscored").innerText = underscoring(completeword);
+                document.getElementById("tried").innerText = "You tried: " + triedchars;
+                if (checkIfCompleted()) {
+                    window.alert("You discovered the sentence!");
+                    document.getElementById("reload-button").classList.remove("hide");
+                }
+                if (!stringarray.includes(inputguess)) {
+                    window.alert(inputguess + " is incorrect!");
+                    lives++;
+                }
+                updateHangman();
+                return;
+            }
+            window.onload = function () {
+                document.getElementById("word-underscored").innerText = underscoring(completeword);
+                document.getElementById("tried").classList.add("hide");
+                document.getElementById("reload-button").classList.add("hide");
+                updateHangman();
+            };
+            function reload() {
+                location.reload();
+            }
+        </script>
+        <style>
+            .centered {
+                display:flex;
+                justify-content: center;
+            }
+            .content {
+                display: flex;
+                justify-content: space-between;
+                padding: 2em;
+            }
+            .inputform > div {
+                display: flex;
+            }
+            .hide {
+                visibility: hidden;
+            }
+            .hangman {
+                margin-left:auto; 
+                margin-right:0;
+                padding: 5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h4>NOTES: You have 7 attempts in total: Rope, Head, Body, Left Arm, Right Arm, Left leg and Right leg</h4>
+        </div>
+        <div class="centered">
+            <button onclick="reload();" id="reload-button">Reload game</button>
+        </div>        
+        <div class="content">
+            <div class="inputform">
+                <div>
+                    <input type="text" placeholder="What's your guess?" id="guess">
+                    <button type="button" onclick="update();">Check</button>
+                </div>
+                <h5 id="tried"></h5>
+            </div>
+            <div class="rightsection">
+                <div class="wordguess">
+                    <h3>This is the placeholder for the word that you need to guess: </h3>
+                    <a id="word-underscored"></a>
+                </div>
+                <div class="hangman">
+                    <canvas id="myCanvas" width="600" height="400"></canvas>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

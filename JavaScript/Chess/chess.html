@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var fired = 0;
+            var coordinates1 = [];
+            var coordinates2 = [];
+            var text1 = "These queens <b>can</b> attack each other";
+            var text2 = "These queens <b>can't</b> attack each other";
+            $(document).ready(function () {
+                function notClicked(object) {
+                    var index = $(object).index();
+                    var parentIndex = $(object).parent().index();
+                    console.log(index);
+                    console.log(parentIndex);
+                    if (coordinates1.lenght != 0) {
+                        if (index == coordinates1[0] && parentIndex == coordinates1[1])
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                function showResults(object) {
+                    if (coordinates1[0] == coordinates2[0]) {
+                        document.getElementById("text").innerHTML = text1;
+                    } else if (coordinates1[1] == coordinates2[1]) {
+                        document.getElementById("text").innerHTML = text1;
+                    } else if (Math.abs(coordinates1[0] - coordinates2[0]) == Math.abs(coordinates1[1] - coordinates2[1])) {
+                        document.getElementById("text").innerHTML = text1;
+                    } else {
+                        document.getElementById("text").innerHTML = text2;
+                    }
+                    document.getElementById("right-section").classList.remove("hide");
+                }
+                function appendIndexes(object) {
+                    var index = $(object).index();
+                    var parentIndex = $(object).parent().index();
+                    if (fired == 1) {
+                        coordinates1.push(index, parentIndex);
+                    } else {
+                        coordinates2.push(index, parentIndex);
+                    }
+                }
+                $(".button").click(function () {
+                    if (fired < 2) {
+                        if (notClicked(this)) {
+                            $(this).addClass("chess");
+                            fired++;
+                            appendIndexes(this);
+                            if (fired == 2) {
+                                showResults(this);
+                            }
+                        } else {
+                            window.alert("You can't choose the same field twice");
+                        }
+                    }
+                });
+            });
+        </script>
+        <style>
+            body {
+                display: flex;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            .chess {
+                background-image: url("chess.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .right-section {
+                padding: 2em;
+            }
+            .hide {
+                visibility: hidden;
+            }
+            #text {
+                font-size: 2em;
+            }
+        </style>
+        <title>Chess Queen checker</title>
+    </head>
+    <body>
+        <table style="width:30em;height:30em">
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+            <tr>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+                <td class="button"></td>
+            </tr>
+        </table>
+        <div class="right-section hide" id="right-section">
+            <a id="text"></a>
+            <br/><br/>
+            <button onclick="location.reload();">Reload this page</button>
+        </div>
+    </body>
+</html>

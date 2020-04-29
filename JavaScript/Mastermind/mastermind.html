@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <title>MasterMind</title>
+        <script>
+            var num = 0, attempts = 8, triedchars = [], digits = [], guessed = false, known = 0, guessednum = 0;
+            function hasDuplicates(arr) {
+                return new Set(arr).size !== arr.length;
+            }
+            function underscoring() {
+                var underscore = "";
+                guessed = false;
+                guessednum = 0;
+                for (var i = 0; i < 4; i++) {
+                    if (triedchars[i] == digits[i]) {
+                        underscore = underscore + digits[i];
+                        guessed = true;
+                        guessednum++;
+                    } else {
+                        underscore = underscore + " _ ";
+                    }
+                }
+                return underscore;
+            }
+            function includedDigits() {
+                var included = "";
+                for (var i = 0; i < 4; i++) {
+                    if (digits.includes(triedchars[i])) {
+                        included = included + triedchars[i].toString() + " ";
+                    }
+                }
+                return included;
+            }
+            function stringbuilder() {
+                var string = "· Attempts: " + attempts.toString();
+                string = string + "\n· Currently you know: " + underscoring();
+                var includeresults = includedDigits();
+                if (includeresults != "") {
+                    string = string + "\nHowever, this last guess contained the following digits: " + includeresults;
+                }
+                if (!guessed) {
+                    attempts--;
+                } else {
+                    known = known + guessednum;
+                }
+                if (attempts == 1) {
+                    var numsum = 0;
+                    for (var i = 0; i < 4; i++) {
+                        numsum = numsum + parseInt(digits[i]);
+                    }
+                    string = string + "\nAs this is your last attempt, here is the sum of the digits: " + numsum.toString();
+                }
+                return string + "\n\nType your new guess: ";
+            }
+            while (true) {
+                // Math.random() * (max - min + 1)) + min
+                num = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+                digits = num.toString().split("");
+                if (!hasDuplicates(digits)) {
+                    break;
+                }
+            }            
+            window.alert("Hello! Welcome to Master Mind. In this game, you need to guess (in hangman's style) the 4-digit number that \
+was randomly generated.\nIf your number exactly matches some positions with the number that was generated, you will unlock that position. \
+We will tell you when the number exists but it's not in the correct position.");
+            window.alert("You have 8 attempts. At that last one, we will provide you with the sum of all the digits.\n\nGood luck!");
+            window.alert("You have the following commands:\n·Cancel: Exits the game\n·Reload: Starts a new game.")
+            while (true) {
+                if (known == 4) {
+                    window.alert("You won the game! The correct number was " + num.toString());
+                    break;
+                } 
+                if (attempts == 0) {
+                    window.alert("You don't have more attempts, sorry! Play again!");
+                    break;
+                }
+                var desc = stringbuilder();
+                var input = prompt(desc)
+                if (input.toString().toUpperCase() == "CANCEL") {
+                    break;
+                } else if (input.toString().toUpperCase() == "RELOAD") {
+                    location.reload();
+                    break;
+                } else if (input.length != 4) {
+                    window.alert("You must write 4 numbers!");
+                } else if (isNaN(input)) {
+                    window.alert("You must only write numbers!");
+                } else {
+                    triedchars = input.split("");
+                }
+            }
+            window.alert("Bye!")
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
